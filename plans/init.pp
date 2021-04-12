@@ -23,11 +23,6 @@ plan unjoin (
     }
   }
 
-  $reboot_results = run_task('reboot', $targets)
+  run_plan('reboot', $targets)
 
-  $reboot_results.each |$reboot_result| {
-    $reboot_result['logs'].each |$log| {
-      out::message("${log['level'].upcase}: ${log['message']}")
-    }
-  }
 }
