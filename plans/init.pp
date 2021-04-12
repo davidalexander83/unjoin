@@ -15,7 +15,7 @@ plan unjoin (
         },
       }
   }
-  
+
   # Print log messages from the report
   $apply_results.each |$result| {
     $result.report['logs'].each |$log| {
@@ -23,7 +23,7 @@ plan unjoin (
     }
   }
 
-  $reboot_results = run_task('reboot', 'targets' => $targets)
+  $reboot_results = run_task('reboot', 'target' => $targets)
 
   $reboot_results.each |$reboot_result| {
     $reboot_result['logs'].each |$log| {
